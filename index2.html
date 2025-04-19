@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Queijo com goiabada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2em;
+    }
+
+    .fanta-img {
+      width: 300px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .coca-img {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 60px;
+      cursor: pointer;
+    }
+
+    .mensagem-container {
+      margin-top: 30px;
+    }
+
+    .mensagem {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .qr-container {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .qr-container img {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Clique na coca</h1>
+
+  <img
+    src="fanta.webp"
+    alt="Fanta"
+    class="fanta-img"
+    onclick="clicouFanta()"
+  />
+
+  <img
+    src="coca.webp"
+    alt="Coca"
+    class="coca-img"
+    onclick="clicouCoca()"
+  />
+
+  <div class="mensagem-container">
+    <div class="mensagem" id="mensagem"></div>
+    <div class="qr-container" id="qr-container">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://slaukz.github.io/site_bobo3/"
+        alt="QR Code"
+      />
+    </div>
+  </div>
+
+  <script>
+    function clicouFanta() {
+      document.getElementById("mensagem").textContent = "Essa não é a coca não carai kkkkkkkkk";
+      document.getElementById("qr-container").style.display = "none";
+    }
+
+    function clicouCoca() {
+      document.getElementById("mensagem").textContent = "Parabéns, agora escaneie esse QR Code";
+      document.getElementById("qr-container").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
